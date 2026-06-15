@@ -27,7 +27,7 @@ Built as a single-file static HTML site. To run locally, simply open `index.html
 
 For press, coalition partnerships, legislative inquiries, or to connect as a sport psychology professional interested in the pilot program:
 
-📧 info@strivebeyondsports.org
+📧 strivebeyondsports@gmail.com
 
 ---
 
