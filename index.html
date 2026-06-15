@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strive Beyond Sports | Student-Athlete Mental Health in Illinois</title>
+<meta name="description" content="A policy initiative to bring sport psychology professionals to Illinois high schools, starting with the communities that need it most.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #132038;
+    --navy-light: #1E2F4D;
+    --teal: #00C9B1;
+    --teal-dark: #009E8C;
+    --gold: #F5A623;
+    --gold-dark: #D4891A;
+    --white: #F7F9FC;
+    --slate: #8B9BB4;
+    --slate-light: #C5CDD9;
+    --text-dark: #0A1628;
+    --text-body: #2C3E55;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--text-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-logo span { color: var(--teal); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--slate-light);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-cta {
+    background: var(--teal);
+    color: var(--navy) !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--teal-dark) !important; color: var(--navy) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 64px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 3rem 5rem 5rem;
+    border-right: 1px solid var(--navy-light);
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-stat {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(5rem, 10vw, 8.5rem);
+    font-weight: 800;
+    line-height: 0.9;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .hero-stat span { color: var(--gold); }
+
+  .hero-stat-label {
+    font-size: 1rem;
+    color: var(--slate);
+    line-height: 1.5;
+    max-width: 340px;
+    margin-bottom: 2.5rem;
+    border-left: 3px solid var(--teal);
+    padding-left: 1rem;
+  }
+
+  .hero-source {
+    font-size: 0.72rem;
+    color: var(--slate);
+    letter-spacing: 0.03em;
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 5rem 5rem 3rem;
+    background: var(--navy-mid);
+  }
+
+  .hero-mission-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-mission {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-body {
+    font-size: 1rem;
+    color: var(--slate-light);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 420px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--gold-dark); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--teal);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1.5px solid var(--teal);
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+  .btn-secondary:hover { background: var(--teal); color: var(--navy); }
+
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  /* TICKER / STATS BAR */
+  .stats-bar {
+    background: var(--teal);
+    padding: 1.1rem 4rem;
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+  }
+  .stats-bar-inner {
+    display: flex;
+    gap: 4rem;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--navy);
+  }
+  .stat-item strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  .stat-item span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    max-width: 160px;
+    line-height: 1.3;
+  }
+  .stat-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(10,22,40,0.25);
+    margin: auto 0;
+  }
+
+  /* SECTION BASE */
+  section { padding: 6rem 2rem; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    color: #4A5A6B;
+    line-height: 1.75;
+    max-width: 620px;
+    margin-bottom: 3rem;
+  }
+
+  /* WHY IT MATTERS */
+  .why-section { background: var(--white); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .why-card {
+    border: 1.5px solid #DDE3EC;
+    border-radius: 8px;
+    padding: 2rem;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .why-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .why-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--teal);
+  }
+
+  .why-card-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #E8EDF5;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .why-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+  .why-card p {
+    font-size: 0.92rem;
+    color: #4A5A6B;
+    line-height: 1.7;
+  }
+  .why-card cite {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--slate);
+    margin-top: 0.75rem;
+    font-style: normal;
+    letter-spacing: 0.03em;
+  }
+
+  /* THE INITIATIVE */
+  .initiative-section { background: var(--navy); }
+  .initiative-section .section-eyebrow { color: var(--teal); }
+  .initiative-section .section-title { color: var(--white); }
+  .initiative-section .section-intro { color: var(--slate-light); }
+
+  .initiative-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .step {
+    background: var(--navy-light);
+    border-radius: 8px;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+  }
+
+  .step-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .step h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .step p {
+    font-size: 0.88rem;
+    color: var(--slate);
+    line-height: 1.7;
+  }
+
+  .step-arrow {
+    display: none;
+    position: absolute;
+    right: -0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--teal);
+    font-size: 1.2rem;
+    z-index: 1;
+  }
+
+  /* TIMELINE */
+  .timeline-section { background: #F0F4FA; }
+
+  .timeline {
+    position: relative;
+    margin-top: 3rem;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--teal), var(--gold));
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 0 2.5rem 2.5rem;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -2.65rem;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--teal);
+    transition: border-color 0.2s;
+  }
+  .timeline-item.active .timeline-dot { background: var(--teal); border-color: var(--teal); }
+  .timeline-item.gold .timeline-dot { border-color: var(--gold); }
+  .timeline-item.gold.active .timeline-dot { background: var(--gold); }
+
+  .timeline-period {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 0.3rem;
+  }
+  .timeline-item.gold .timeline-period { color: var(--gold-dark); }
+
+  .timeline-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: #4A5A6B;
+    line-height: 1.65;
+    max-width: 580px;
+  }
+
+  .timeline-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    margin-bottom: 0.4rem;
+  }
+  .badge-now { background: #D1F5EF; color: #0A6B5A; }
+  .badge-next { background: #FEF0D8; color: #7A4A00; }
+  .badge-future { background: #E8EDF5; color: #3A4E6B; }
+
+  /* ABOUT */
+  .about-section { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-photo-wrap {
+    position: relative;
+  }
+
+  .about-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--navy);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--slate);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .about-photo-placeholder svg {
+    width: 60px;
+    height: 60px;
+    opacity: 0.3;
+  }
+
+  .about-accent {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    width: 80%;
+    height: 80%;
+    border: 3px solid var(--teal);
+    border-radius: 8px;
+    z-index: -1;
+  }
+
+  .about-content .section-intro { max-width: 100%; margin-bottom: 1.5rem; }
+
+  .about-credential {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #E8EDF5;
+  }
+  .about-credential:first-of-type { border-top: 1px solid #E8EDF5; }
+
+  .about-credential-icon {
+    width: 36px;
+    height: 36px;
+    background: #E8EDF5;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .about-credential-icon svg { width: 18px; height: 18px; color: var(--navy); }
+
+  .about-credential-text strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.15rem;
+  }
+  .about-credential-text span {
+    font-size: 0.82rem;
+    color: #6B7A8D;
+  }
+
+  /* UPDATES */
+  .updates-section { background: #F0F4FA; }
+
+  .updates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .update-card {
+    background: #fff;
+    border: 1px solid #DDE3EC;
+    border-radius: 8px;
+    padding: 1.75rem;
+    transition: border-color 0.2s;
+  }
+  .update-card:hover { border-color: var(--navy); }
+
+  .update-date {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 0.5rem;
+  }
+
+  .update-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .update-body {
+    font-size: 0.87rem;
+    color: #4A5A6B;
+    line-height: 1.65;
+  }
+
+  .update-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    background: #D1F5EF;
+    color: #0A6B5A;
+  }
+
+  /* CONTACT / CTA */
+  .contact-section { background: var(--navy); }
+  .contact-section .section-eyebrow { color: var(--teal); }
+  .contact-section .section-title { color: var(--white); }
+  .contact-section .section-intro { color: var(--slate-light); max-width: 560px; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .form-field label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: var(--navy-light);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    padding: 0.7rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+  .form-field input::placeholder,
+  .form-field textarea::placeholder { color: var(--slate); }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus { border-color: var(--teal); }
+  .form-field select { appearance: none; cursor: pointer; }
+  .form-field select option { background: var(--navy-mid); }
+
+  .form-submit {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 2rem; }
+
+  .contact-link-card {
+    background: var(--navy-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .contact-link-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  .contact-link-card p {
+    font-size: 0.85rem;
+    color: var(--slate);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .contact-link-card a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-decoration: none;
+  }
+  .contact-link-card a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: #050D1A;
+    padding: 2.5rem 2rem;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+  .footer-logo span { color: var(--teal); }
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--slate);
+  }
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 0.78rem;
+    color: var(--slate);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--teal); }
+
+  /* THANK YOU MESSAGE */
+  .form-thanks {
+    display: none;
+    background: var(--navy-light);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--teal);
+  }
+  .form-thanks h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+  .form-thanks p { font-size: 0.9rem; color: var(--slate-light); }
+
+  /* MOBILE NAV TOGGLE */
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav-toggle svg { width: 24px; height: 24px; stroke: var(--white); fill: none; stroke-width: 2; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 4rem 2rem 3rem; border-right: none; border-bottom: 1px solid var(--navy-light); }
+    .hero-right { padding: 3rem 2rem 4rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; background: var(--navy-mid); padding: 1.5rem 2rem; gap: 1.2rem; border-bottom: 1px solid var(--navy-light); }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: block; }
+    .stats-bar { padding: 1.1rem 1.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 4rem 1.25rem; }
+    .hero-left, .hero-right { padding: 3rem 1.25rem; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+
+  /* SCROLL ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Strive <span>Beyond</span> Sports</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#why">Why It Matters</a></li>
+    <li><a href="#initiative">The Initiative</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#updates">Updates</a></li>
+    <li><a href="#contact" class="nav-cta">Get Involved</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Illinois Student-Athlete Mental Health Initiative</p>
+    <div class="hero-stat"><span>1</span> in 3</div>
+    <p class="hero-stat-label">
+      student-athletes will experience a significant mental health challenge that impacts their performance — and most will never receive sport-specific support.
+    </p>
+    <p class="hero-source">Source: NCAA Student-Athlete Well-Being Research, 2023</p>
+  </div>
+
+  <div class="hero-right">
+    <p class="hero-mission-label">Our Mission</p>
+    <h1 class="hero-mission">Bringing sport psychology to Illinois high schools that need it most.</h1>
+    <p class="hero-body">
+      Strive Beyond Sports is a policy initiative working to place trained sport psychology professionals inside Illinois high schools through a targeted grant pilot program — starting with the communities carrying the greatest need.
+    </p>
+    <div class="hero-buttons">
+      <a href="#initiative" class="btn-primary">See the Plan</a>
+      <a href="#contact" class="btn-secondary">Support This</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar" aria-label="Key statistics">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <strong>200,000+</strong>
+      <span>Illinois high school student-athletes</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <strong>&lt;1%</strong>
+      <span>of IL high schools have a sport psychology professional</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <strong>35%</strong>
+      <span>of student-athletes report symptoms of anxiety or depression</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <strong>2027–28</strong>
+      <span>Illinois begins universal mental health screenings in schools</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <strong>0</strong>
+      <span>Illinois mandates for athlete-specific mental health support</span>
+    </div>
+    <div class="stat-divider"></div>
+    <!-- duplicate for seamless loop -->
+    <div class="stat-item">
+      <strong>200,000+</strong>
+      <span>Illinois high school student-athletes</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <strong>&lt;1%</strong>
+      <span>of IL high schools have a sport psychology professional</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <strong>35%</strong>
+      <span>of student-athletes report symptoms of anxiety or depression</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <strong>2027–28</strong>
+      <span>Illinois begins universal mental health screenings in schools</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <strong>0</strong>
+      <span>Illinois mandates for athlete-specific mental health support</span>
+    </div>
+  </div>
+</div>
+
+<!-- WHY IT MATTERS -->
+<section class="why-section" id="why">
+  <div class="container">
+    <p class="section-eyebrow fade-in">The Problem</p>
+    <h2 class="section-title fade-in">Why student-athlete mental health can't wait.</h2>
+    <p class="section-intro fade-in">
+      Student-athletes face a unique intersection of academic pressure, physical demands, team dynamics, and identity tied to performance. General school counselors are not trained for this. The gap is real — and measurable.
+    </p>
+
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <div class="why-card-num">01</div>
+        <h3>Performance Is Directly Tied to Mental Health</h3>
+        <p>Anxiety, depression, and burnout don't stay off the field. Research consistently shows that unaddressed mental health challenges reduce athletic performance, increase injury risk, and shorten athletic careers — often during the most critical developmental years.</p>
+        <cite>Source: Journal of Athletic Training, 2021</cite>
+      </div>
+
+      <div class="why-card fade-in">
+        <div class="why-card-num">02</div>
+        <h3>Athletes Are Less Likely to Seek Help</h3>
+        <p>The culture of sport — where toughness is celebrated and vulnerability is stigmatized — creates barriers unique to athletes. A sport psychology professional embedded in the school speaks that language, making it safe to seek support before a crisis occurs.</p>
+        <cite>Source: British Journal of Sports Medicine, 2022</cite>
+      </div>
+
+      <div class="why-card fade-in">
+        <div class="why-card-num">03</div>
+        <h3>Illinois Is Already Acting — Athletes Are Left Out</h3>
+        <p>In 2025, Illinois became the first state to mandate universal mental health screenings for all students (SB1560). But the implementation guidance does not identify student-athletes as a population with distinct needs. Strive Beyond Sports aims to close that gap.</p>
+        <cite>Source: Illinois SB1560, signed July 31, 2025</cite>
+      </div>
+
+      <div class="why-card fade-in">
+        <div class="why-card-num">04</div>
+        <h3>High-Need Schools Are Most Vulnerable</h3>
+        <p>Schools carrying the heaviest academic and socioeconomic challenges — designated "Comprehensive" by ISBE — also have the fewest mental health resources. Student-athletes in these communities compete with the least support of any group in the state.</p>
+        <cite>Source: Illinois Report Card, ISBE 2025</cite>
+      </div>
+
+      <div class="why-card fade-in">
+        <div class="why-card-num">05</div>
+        <h3>The Return on Investment Is Clear</h3>
+        <p>Schools that have implemented sport psychology programs report reductions in athlete dropout rates, decreases in sport-related anxiety presenting in the classroom, and stronger relationships between coaches, athletes, and school support staff.</p>
+        <cite>Source: AASP Applied Sport Psychology Research, 2023</cite>
+      </div>
+
+      <div class="why-card fade-in">
+        <div class="why-card-num">06</div>
+        <h3>Illinois Has the Infrastructure — Not the Specialists</h3>
+        <p>Illinois trains qualified sport psychology professionals at multiple universities. Certified Mental Performance Consultants (CMPCs) exist in the state. What's missing is the policy and funding mechanism to get them into schools where athletes need them.</p>
+        <cite>Source: Association for Applied Sport Psychology (AASP)</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE INITIATIVE -->
+<section class="initiative-section" id="initiative">
+  <div class="container">
+    <p class="section-eyebrow fade-in">The Plan</p>
+    <h2 class="section-title fade-in">A Grant Pilot Program: Targeted. Evidence-Based. Scalable.</h2>
+    <p class="section-intro fade-in">
+      Rather than mandate a statewide hire overnight, Strive Beyond Sports is pursuing a grant pilot program to place sport psychology professionals in Illinois high schools designated as high-need by ISBE. The pilot builds the data record needed to expand statewide.
+    </p>
+
+    <div class="initiative-steps">
+      <div class="step fade-in">
+        <div class="step-num">Phase One</div>
+        <h3>Target the Right Schools</h3>
+        <p>Pilot schools will be drawn from ISBE's "Comprehensive" designation list — the highest-need schools in Illinois. These schools already receive additional state resources. Sport psychology support completes the picture for their student-athletes.</p>
+      </div>
+
+      <div class="step fade-in">
+        <div class="step-num">Phase Two</div>
+        <h3>Place Qualified Professionals</h3>
+        <p>Grant funding covers placement of Certified Mental Performance Consultants (CMPCs) or master's-prepared sport psychology professionals in each pilot school — part-time initially, building to full-time based on athlete population and demonstrated need.</p>
+      </div>
+
+      <div class="step fade-in">
+        <div class="step-num">Phase Three</div>
+        <h3>Measure, Document, Report</h3>
+        <p>Pilot schools participate in a structured outcomes-tracking protocol: athlete mental health screening results, performance indicators, coach feedback, injury rates, and student engagement. This data becomes the evidence base for statewide legislation.</p>
+      </div>
+
+      <div class="step fade-in">
+        <div class="step-num">Phase Four</div>
+        <h3>Scale Through Legislation</h3>
+        <p>Armed with real Illinois data, Strive Beyond Sports will introduce legislation in the 105th General Assembly (2027) to expand the program statewide — with funding mechanisms, credentialing standards, and implementation guidance already tested.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="timeline">
+  <div class="container">
+    <p class="section-eyebrow fade-in">The Road Ahead</p>
+    <h2 class="section-title fade-in">A Realistic Timeline to Change.</h2>
+    <p class="section-intro fade-in">
+      Legislative change takes time. Here's an honest look at where we are and where we're going — built around the Illinois General Assembly calendar and ISBE's own implementation schedule.
+    </p>
+
+    <div class="timeline" style="max-width: 700px;">
+
+      <div class="timeline-item active fade-in">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge badge-now">Now — Summer 2026</span>
+        <div class="timeline-title">Groundwork & ISBE Stakeholder Engagement</div>
+        <p class="timeline-desc">Submitting formal public comment to ISBE as they draft SB1560 implementation guidance (due September 2026). Building coalition of legislators, professional organizations, and school partners. Identifying pilot school candidates from ISBE's Comprehensive designation list.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge badge-now">Fall 2026</span>
+        <div class="timeline-title">Legislator Meetings & Coalition Building</div>
+        <p class="timeline-desc">Meeting with SB1560 sponsors (Sen. Feigenholtz, Sen. Fine, Rep. LaPointe) during fall recess. Securing support letters from AASP, Illinois High School Association, and Illinois Counseling Association. Developing formal grant pilot bill language with a legislative attorney.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge badge-next">January 2027</span>
+        <div class="timeline-title">Grant Pilot Bill Introduction</div>
+        <p class="timeline-desc">105th Illinois General Assembly convenes. Legislative sponsor files the Strive Beyond Sports grant pilot bill. Bill is referred to the Senate or House Education Committee for hearing.</p>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge badge-next">Spring 2027</span>
+        <div class="timeline-title">Committee Testimony & Floor Vote</div>
+        <p class="timeline-desc">Public testimony from sport psychology professionals, coaches, student-athletes, and school administrators. Coalition advocacy in Springfield. Bill advances to full floor vote in both chambers.</p>
+      </div>
+
+      <div class="timeline-item gold fade-in">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge badge-future">Summer 2027</span>
+        <div class="timeline-title">Governor's Signature</div>
+        <p class="timeline-desc">Grant pilot bill signed into law. ISBE begins identifying and funding pilot school placements for the 2027–28 school year — the same year universal mental health screenings begin statewide.</p>
+      </div>
+
+      <div class="timeline-item gold fade-in">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge badge-future">2028–2029</span>
+        <div class="timeline-title">Pilot Data → Statewide Legislation</div>
+        <p class="timeline-desc">Two-year pilot produces outcome data. Strive Beyond Sports returns to Springfield with evidence-backed legislation requiring sport psychology access in all Illinois high schools with athletic programs.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-wrap fade-in">
+        <div class="about-photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Your professional photo<br>goes here</span>
+        </div>
+        <div class="about-accent"></div>
+      </div>
+
+      <div class="about-content fade-in">
+        <p class="section-eyebrow">About the Founder</p>
+        <h2 class="section-title">Trained for this.<br>Committed to this.</h2>
+        <p class="section-intro">
+          Strive Beyond Sports was founded by a sport psychology professional from the Chicago area who saw firsthand the gap between what Illinois student-athletes need and what their schools provide. This is not an abstract policy idea — it is a mission built on education, professional experience, and a deep belief that mental performance support belongs in every Illinois high school.
+        </p>
+
+        <div class="about-credential">
+          <div class="about-credential-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="about-credential-text">
+            <strong>Master of Science in Sport Psychology</strong>
+            <span>Lock Haven University</span>
+          </div>
+        </div>
+
+        <div class="about-credential">
+          <div class="about-credential-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="about-credential-text">
+            <strong>Focus: Adolescent Athlete Mental Performance</strong>
+            <span>High school sport psychology, performance mindset, mental health intervention</span>
+          </div>
+        </div>
+
+        <div class="about-credential">
+          <div class="about-credential-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="about-credential-text">
+            <strong>Based in Hickory Hills, Illinois</strong>
+            <span>Advocating for change in the state where student-athletes deserve better</span>
+          </div>
+        </div>
+
+        <div class="about-credential">
+          <div class="about-credential-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="about-credential-text">
+            <strong>Policy Advocate & Initiative Founder</strong>
+            <span>Working with Illinois legislators, ISBE, and sport psychology organizations to turn expertise into law</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPDATES -->
+<section class="updates-section" id="updates">
+  <div class="container">
+    <p class="section-eyebrow fade-in">What's Happening</p>
+    <h2 class="section-title fade-in">Initiative Updates</h2>
+    <p class="section-intro fade-in">
+      Strive Beyond Sports is an active, moving effort. Follow our progress as we build toward change in Springfield.
+    </p>
+
+    <div class="updates-grid">
+      <div class="update-card fade-in">
+        <div class="update-date">June 2026</div>
+        <div class="update-title">Strive Beyond Sports Launches</div>
+        <p class="update-body">The initiative is officially underway. We are building our coalition, identifying pilot school candidates, and preparing our stakeholder comment for ISBE's SB1560 implementation guidance process — with a September 2026 deadline.</p>
+        <span class="update-tag">Milestone</span>
+      </div>
+
+      <div class="update-card fade-in">
+        <div class="update-date">July 2025</div>
+        <div class="update-title">Illinois Passes SB1560 — A Foundation to Build On</div>
+        <p class="update-body">Governor Pritzker signed SB1560 into law, making Illinois the first state to mandate universal mental health screenings for students in grades 3–12. Strive Beyond Sports will advocate for student-athletes to be recognized as a distinct population in the implementation guidance.</p>
+        <span class="update-tag">Policy Context</span>
+      </div>
+
+      <div class="update-card fade-in">
+        <div class="update-date">Coming Fall 2026</div>
+        <div class="update-title">ISBE Stakeholder Comment Submission</div>
+        <p class="update-body">We are preparing a formal written comment to ISBE's Wellness and Student Care Department advocating that the SB1560 guidance specifically identify student-athletes and reference sport psychology support as a recommended intervention pathway.</p>
+        <span class="update-tag">In Progress</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / GET INVOLVED -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <p class="section-eyebrow fade-in">Get Involved</p>
+    <h2 class="section-title fade-in">This changes when people show up.</h2>
+    <p class="section-intro fade-in">
+      Whether you are a coach, parent, educator, legislator, or fellow sport psychology professional — there is a role for you in this initiative. Tell us who you are and how you want to help.
+    </p>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="First name">
+            </div>
+            <div class="form-field">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Last name">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com">
+          </div>
+          <div class="form-field">
+            <label for="role">I am a...</label>
+            <select id="role">
+              <option value="" disabled selected>Select your role</option>
+              <option>Parent of a student-athlete</option>
+              <option>Coach or Athletic Director</option>
+              <option>School Counselor or Mental Health Professional</option>
+              <option>Sport Psychology Professional / CMPC</option>
+              <option>Educator or Administrator</option>
+              <option>Legislator or Policy Staffer</option>
+              <option>Student-Athlete</option>
+              <option>Community Member / Supporter</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">How do you want to help? (optional)</label>
+            <textarea id="message" rows="4" placeholder="I'd like to..."></textarea>
+          </div>
+          <button class="btn-primary form-submit" onclick="handleSubmit()">Join the Initiative</button>
+        </div>
+        <div class="form-thanks" id="formThanks">
+          <h4>You're in. Thank you.</h4>
+          <p>We'll be in touch as the initiative moves forward. Every name behind this effort makes a difference in Springfield.</p>
+        </div>
+      </div>
+
+      <div class="contact-links fade-in">
+        <div class="contact-link-card">
+          <h4>For Legislators & Policy Staff</h4>
+          <p>Download our one-page initiative brief — a concise summary of the problem, proposed grant pilot structure, and the ask for the 2027 session.</p>
+          <a href="#" onclick="alert('One-pager PDF coming soon. Contact us directly to request it early.'); return false;">Request the Policy Brief →</a>
+        </div>
+
+        <div class="contact-link-card">
+          <h4>For Sport Psychology Professionals</h4>
+          <p>If you are a CMPC or master's-prepared sport psychology professional interested in being part of the pilot program, we want to hear from you now — before the legislation is written.</p>
+          <a href="mailto:info@strivebeyondsports.org">info@strivebeyondsports.org →</a>
+        </div>
+
+        <div class="contact-link-card">
+          <h4>For Organizations & Coalition Partners</h4>
+          <p>We are building a formal coalition of endorsing organizations. If your organization supports student-athlete mental health in Illinois, let's talk about how to make that support official.</p>
+          <a href="mailto:info@strivebeyondsports.org">Reach out to discuss partnership →</a>
+        </div>
+
+        <div class="contact-link-card">
+          <h4>Media & Press</h4>
+          <p>We welcome coverage of the student-athlete mental health gap in Illinois. Our founder is available for interviews, comment, and background sourcing.</p>
+          <a href="mailto:info@strivebeyondsports.org">Media inquiries →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Strive <span>Beyond</span> Sports</div>
+    <p class="footer-copy">© 2026 Strive Beyond Sports. A policy initiative based in Illinois.</p>
+    <ul class="footer-links">
+      <li><a href="#why">Why It Matters</a></li>
+      <li><a href="#initiative">The Plan</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function handleSubmit() {
+    const email = document.getElementById('email').value;
+    const fname = document.getElementById('fname').value;
+    if (!fname || !email) {
+      alert('Please enter your name and email to join the initiative.');
+      return;
+    }
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formThanks').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
